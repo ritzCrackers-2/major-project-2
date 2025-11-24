@@ -30,8 +30,8 @@ def draw_main_menu():
     screen.blit(quit_game, (width // 2 - quit_game.get_width() // 2, 380))
     pygame.display.flip()
 
-x_velocity = width // 2
-y_velocity = height - 80
+x_velocity = 0
+y_velocity = 0
 player_radius = 20
 player_speed = 6
 
