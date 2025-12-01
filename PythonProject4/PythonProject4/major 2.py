@@ -8,6 +8,7 @@ width, height = 1000, 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Slope")
 
+
 MENU = 0
 PLAYING = 1
 game_state = MENU
@@ -32,7 +33,7 @@ def draw_main_menu():
     pygame.display.flip()
 
 player_radius = 20
-player_speed = 2
+player_speed = 4
 
 lane_left = int(width * 0.25)
 lane_right = int(width * 0.75)
@@ -73,11 +74,10 @@ class Player(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, x_pos): 
         super().__init__()
-        self.image = Block_sur 
+        self.image = target_sur 
         self.spawnx = x_pos 
         self.posy = -50 
         self.rect = self.image.get_rect(center=(self.spawnx, self.posy))
-        self.rect = self.rect.inflate(-5, -5)
         self.number = 0 
 
     def update(self):
@@ -183,10 +183,6 @@ while running:
     player_center_x = self.rect.centerx
     if player_center_x < (track_center - 200 + 10) or player_center_x > (track_center + 200 - 10):
          running = False 
-
-
-    #if left_block.colliderect(player_box) or right_block.colliderect(player_box):
-    #    game_state = MENU
 
     pygame.display.update()
     pygame.display.flip()
